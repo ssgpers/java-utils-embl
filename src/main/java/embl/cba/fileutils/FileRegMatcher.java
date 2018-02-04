@@ -22,8 +22,8 @@ public class FileRegMatcher{
 	
 	public FileRegMatcher(){}
 	
-	public void setParameters (String fileNemaRegularExpression,String[] datasetGroupTags){
-		fileNamePatternString=fileNemaRegularExpression;
+	public void setParameters (String fileNameRegularExpression,String[] datasetGroupTags){
+		fileNamePatternString=fileNameRegularExpression;
 		fileNamePattern=Pattern.compile(fileNamePatternString);
 		datasetGroups=datasetGroupTags;
 		nGroups=datasetGroups.length;
@@ -61,28 +61,22 @@ public class FileRegMatcher{
 	private void checkFile(File testFile) {
 	   Matcher matcher=fileNamePattern.matcher(testFile.getName());
 	   if (matcher.matches()){
-		   RegGroupRecord newRegGroup=createRegRecordFromMatcher(matcher);
+		   RegGroupRecord newRegGroup=createRegRecordFromMatcher(matcher,testFile.getParentFile());
 		   if (!groupRecordsList.contains(newRegGroup)){
 			   groupRecordsList.add(newRegGroup);
-			   outputFilesList.add(new File(replaceGroupsInPatternString(newRegGroup)));
+			   outputFilesList.add(new File(newRegGroup.getParentFile(),replaceGroupsInPatternString(newRegGroup)));
 		   }
-		   
-		   
-		   
-		   
-		   
-		   //outputFiles.add(testFile);
 	   }
 	}
 	
-	RegGroupRecord createRegRecordFromMatcher(Matcher matcher){
+	RegGroupRecord createRegRecordFromMatcher(Matcher matcher, File parentFile){
 		String[] recordValues=new String[nGroups];
 		
 		for (int groupIndex=0;groupIndex<nGroups;groupIndex++){
 			recordValues[groupIndex]=matcher.group(datasetGroups[groupIndex]);
 		}
 		
-		return new RegGroupRecord(recordValues);
+		return new RegGroupRecord(recordValues,parentFile);
 	}
 	
 	String replaceGroupInPatternWithValue(String originalString, String groupName, String replacement){

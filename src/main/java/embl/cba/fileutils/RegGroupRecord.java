@@ -1,10 +1,18 @@
 package embl.cba.fileutils;
 
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 public class RegGroupRecord {
 	String[] groupValues;
+	File parentFile;
+	Path parentPath;
 	
-	public RegGroupRecord(String[] newValues) {
+	public RegGroupRecord(String[] newValues, File newParentFile) {
 		groupValues=newValues;
+		parentFile=newParentFile;
+		parentPath=parentFile.toPath();
 	}
 
 	public String[] getValues(){
@@ -18,6 +26,15 @@ public class RegGroupRecord {
 	public int getNValues(){
 		return groupValues.length;
 	}
+	
+	public File getParentFile(){
+		return parentFile;
+	}
+
+	public Path getParentPath(){
+		return parentPath;
+	}
+
 	
 	
 	@Override
@@ -33,7 +50,10 @@ public class RegGroupRecord {
 				return false;
 		}
 		
-		
-		return true;
+		try{
+			return Files.isSameFile(this.getParentPath(), castedValue.getParentPath());
+		}catch (Exception ex){
+			return false;
+		}
 	}
 }
