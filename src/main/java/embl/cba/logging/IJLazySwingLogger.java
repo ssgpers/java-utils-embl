@@ -110,11 +110,15 @@ public class IJLazySwingLogger implements Logger {
     @Override
     public synchronized void info( String message )
     {
-        ijLazySwingLog( String.format("%s", message) );
+        ijLazySwingAndFileLog( String.format("%s", message) );
 
         if ( logService != null )
         {
             logService.info( message );
+        }
+        else
+        {
+            System.out.print( "[INFO] " + message + "\n" );
         }
     }
 
@@ -226,6 +230,10 @@ public class IJLazySwingLogger implements Logger {
         {
             logService.info( jointText );
         }
+        else
+        {
+            System.out.print( "[INFO] " + message + "\n" );
+        }
 
         if ( isFileLogging )
         {
@@ -248,7 +256,7 @@ public class IJLazySwingLogger implements Logger {
     }
 
     @Override
-    public void progressWheel(String message)
+    public void progressWheel( String message )
     {
         SwingUtilities.invokeLater(new Runnable() {
             public void run()
@@ -280,7 +288,7 @@ public class IJLazySwingLogger implements Logger {
     @Override
     public synchronized void error(String message)
     {
-        ijLazySwingLog( String.format("ERROR: %s", message) );
+        ijLazySwingAndFileLog( String.format("ERROR: %s", message) );
 
         if ( isIJLogWindowLogging )
         {
@@ -291,36 +299,54 @@ public class IJLazySwingLogger implements Logger {
         {
             logService.error( message );
         }
+        else
+        {
+            System.err.print( "[ERROR] " + message + "\n" );
+            System.out.print( "[ERROR] " + message + "\n" );
+        }
 
     }
 
     @Override
     public synchronized void warning( String message )
     {
-        ijLazySwingLog( String.format("[WARNING]: %s", message) );
+        ijLazySwingAndFileLog( String.format("[WARNING]: %s", message) );
 
         if ( logService != null )
         {
             logService.warn( message );
         }
+        else
+        {
+            System.out.print( "[WARNING] " + message + "\n" );
+        }
 
     }
 
     @Override
-    public synchronized void debug( String _message ){
+    public synchronized void debug( String message ){
         if ( showDebug )
         {
-            ijLazySwingLog( String.format("[DEBUG]: %s", _message) );
+            ijLazySwingAndFileLog( String.format("[DEBUG]: %s", message) );
+        }
+
+        if ( logService != null )
+        {
+            logService.debug( message );
+        }
+        else
+        {
+            System.out.print( "[DEBUG] " + message + "\n" );
         }
     }
 
 
-    private void ijLazySwingLog( String message )
+    private void ijLazySwingAndFileLog( String message )
     {
         SwingUtilities.invokeLater(new Runnable() {
             public void run()
             {
-                if (isIJLogWindowLogging)
+                if ( isIJLogWindowLogging )
                 {
                     IJ.log( message );
                 }
