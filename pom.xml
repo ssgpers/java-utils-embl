@@ -15,7 +15,7 @@
 	<groupId>embl.almf</groupId>
 	<version>0.1.0-SNAPSHOT</version>
 
-	<name>EMBL_Java_Utils</name>
+	<name>java-utils--embl-cba</name>
 	<inceptionYear>2018</inceptionYear>
 	<organization>
 		<name>EMBL</name>
@@ -27,7 +27,7 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
-
+	<url>http://embl.de/</url>
 	<developers>
 		<developer>
 			<id>halavaty</id>
@@ -58,6 +58,18 @@
 		</contributor>
 	</contributors>
 
+	<mailingLists>
+		<mailingList>
+			<name>ImageJ Forum</name>
+			<archive>http://forum.imagej.net/</archive>
+		</mailingList>
+	</mailingLists>
+
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/imagej/example-legacy-plugin/issues</url>
+	</issueManagement>
+
 	<scm>
 		<tag>HEAD</tag>
 	</scm>
@@ -79,6 +91,6 @@
 	
 	
 	
-	<artifactId>EMBL_Java_Utils</artifactId>
+	<artifactId>java-utils--embl-cba</artifactId>
 	<description>Tool functions of broader use.</description>
 </project>
