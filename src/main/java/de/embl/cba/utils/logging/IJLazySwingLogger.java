@@ -1,4 +1,4 @@
-package embl.cba.logging;
+package de.embl.cba.utils.logging;
 
 import javax.swing.*;
 import java.io.File;

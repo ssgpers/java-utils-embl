@@ -3,7 +3,7 @@ package file_reg_exp;
 import java.io.File;
 import java.util.List;
 
-import embl.cba.fileutils.FileRegMatcher;
+import de.embl.cba.utils.fileutils.FileRegMatcher;
 
 public abstract class RegNameExtractor {
 	

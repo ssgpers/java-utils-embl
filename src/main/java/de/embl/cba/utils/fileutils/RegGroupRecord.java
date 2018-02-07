@@ -1,4 +1,4 @@
-package embl.cba.fileutils;
+package de.embl.cba.utils.fileutils;
 
 import java.io.File;
 import java.nio.file.Files;
