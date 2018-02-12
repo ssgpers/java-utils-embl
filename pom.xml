@@ -15,7 +15,7 @@
 	<groupId>de.embl.cba</groupId>
 	<version>0.0.2</version>
 
-	<name>java-utils--embl-cba</name>
+	<name>java-utils-embl</name>
 	<inceptionYear>2018</inceptionYear>
 	<organization>
 		<name>EMBL</name>
@@ -89,7 +89,7 @@
 	</properties>
 
 
-	<artifactId>java-utils--embl-cba</artifactId>
+	<artifactId>java-utils-embl</artifactId>
 	<description>Tool functions of broader use.</description>
 
 
