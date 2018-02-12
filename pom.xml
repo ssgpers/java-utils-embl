@@ -67,7 +67,7 @@
 
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/imagej/example-legacy-plugin/issues</url>
+		<url>https://github.com/ssgpers/java-utils-embl/issues</url>
 	</issueManagement>
 
 	<scm>
@@ -82,7 +82,7 @@
 		<main-class>com.mycompany.imagej.Process_Pixels</main-class>
 		<license.licenseName>bsd_2</license.licenseName>
 		<license.copyrightOwners>EMBL</license.copyrightOwners>
-		<license.projectName>Fiji distribution of ImageJ for the life sciences.</license.projectName>
+		<license.projectName>Tool functions for the developing Fiji-dependent and other Java projects.</license.projectName>
 
 		<imagej.app.directory>/Applications/Fiji.app/</imagej.app.directory>
 		<enforcer.skip>true</enforcer.skip>
