@@ -232,7 +232,7 @@ public class IJLazySwingLogger implements Logger {
         }
         else
         {
-            System.out.print( "[INFO] " + message + "\n" );
+            System.out.print( "[INFO] " + jointText + "\n" );
         }
 
         if ( isFileLogging )
