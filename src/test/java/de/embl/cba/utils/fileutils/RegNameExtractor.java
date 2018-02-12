@@ -1,4 +1,4 @@
-package file_reg_exp;
+package de.embl.cba.utils.fileutils;
 
 import java.io.File;
 import java.util.List;
