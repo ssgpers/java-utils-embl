@@ -21,7 +21,7 @@ public abstract class PathMapperTest {
 		
 		
 			System.out.println("Selected test file: "+ selectedFile);
-			System.out.println("Modified Path: "+ PathMapper.asEMBLClusterMounted(selectedFile.toPath()).toString());
+			System.out.println("Modified Path: "+ PathMapper.asEMBLClusterMounted(selectedFile.toPath()));
 		}
 		System.out.println("End test");
 		
