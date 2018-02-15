@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 public abstract class PathMapper
 {
 
-    public static Path asEMBLClusterMounted( Path path )
+    public static String asEMBLClusterMounted( Path path )
     {
 
         String pathString = path.toString();
@@ -43,8 +43,8 @@ public abstract class PathMapper
                     }
                 }
 
-                newPathString = pathString.replace( "\\", "/" );
-                newPathString = pathString.replaceFirst( "//.*/", "/g/" );
+                newPathString = newPathString.replace( "\\", "/" );
+                newPathString = newPathString.replaceFirst( "//[^/]*/", "/g/" );
 
             }
             catch ( IOException e )
@@ -58,7 +58,7 @@ public abstract class PathMapper
         }
 
 
-        return Paths.get( newPathString );
+        return newPathString;//Paths.get( newPathString );
 
     }
 
