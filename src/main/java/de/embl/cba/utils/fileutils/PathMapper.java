@@ -1,14 +1,35 @@
 package de.embl.cba.utils.fileutils;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class PathMapper
 {
+
+    public static List< String > asEMBLClusterMounted( List< Path > paths )
+    {
+        ArrayList< String > newPaths = new ArrayList<>();
+
+        for ( Path path : paths )
+        {
+            newPaths.add( asEMBLClusterMounted( path.toString() ) );
+        }
+
+        return newPaths;
+    }
+
+    public static String asEMBLClusterMounted( String string )
+    {
+        return asEMBLClusterMounted( Paths.get( string ) );
+    }
+
+    public static String asEMBLClusterMounted( File file )
+    {
+        return asEMBLClusterMounted( file.toPath() );
+    }
 
     public static String asEMBLClusterMounted( Path path )
     {
@@ -49,7 +70,7 @@ public abstract class PathMapper
             }
             catch ( IOException e )
             {
-                e.printStackTrace();
+                System.out.println( e.toString() );
             }
         }
         else
@@ -57,35 +78,24 @@ public abstract class PathMapper
             newPathString = pathString;
         }
 
-
-        return newPathString;//Paths.get( newPathString );
+        return newPathString; //Paths.get( newPathString );
 
     }
 
     public static String getOsName()
     {
-        String OS = System.getProperty("os.name");
-        return OS;
+        return System.getProperty("os.name");
     }
 
     public static boolean isWindows()
     {
-        return getOsName().startsWith("Windows");
+        return getOsName().toLowerCase().contains( "win" );
     }
-
 
     public static boolean isMac()
     {
         String OS = getOsName();
-
-        if ( ( OS.toLowerCase().indexOf( "mac" ) >= 0 ) || ( OS.toLowerCase().indexOf( "darwin" ) >= 0 ) )
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return ( OS.toLowerCase().contains( "mac" ) ) || ( OS.toLowerCase().contains( "darwin" ) );
     }
 
 }
