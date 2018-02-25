@@ -1,5 +1,7 @@
 package de.embl.cba.utils.fileutils;
 
+import de.embl.cba.utils.OSUtils;
+
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -34,14 +36,18 @@ public abstract class PathMapper
     public static String asEMBLClusterMounted( Path path )
     {
 
-        String pathString = path.toString();
-        String newPathString = null;
+        String newPathString = path.toString();
 
-        if ( isMac() )
+        if ( newPathString.length() < 3 )
         {
-            newPathString = pathString.replace( "/Volumes/", "/g/" );
+            return newPathString;
         }
-        else if ( isWindows() )
+
+        if ( OSUtils.isMac() )
+        {
+            newPathString = newPathString.replace( "/Volumes/", "/g/" );
+        }
+        else if ( OSUtils.isWindows() )
         {
             try
             {
@@ -55,13 +61,22 @@ public abstract class PathMapper
                 String line = null;
                 String[] components = null;
 
+                System.out.println( "Input path string: " + newPathString );
                 while ( null != ( line = bufferedReader.readLine() ) )
                 {
+                    System.out.println( line );
                     components = line.split( "\\s+" );
-                    if ( ( components.length > 2 ) && ( components[ 1 ].equals( pathString.substring( 0, 2 ) ) ) )
+                    if ( components.length > 2 )
                     {
-                        newPathString = pathString.replace( components[ 1 ], components[ 2 ] );
+                        System.out.println( components[ 1 ] + ": " + components[2] );
+
+                        if ( components[ 1 ].equals( newPathString.substring( 0, 2 )  ) )
+                        {
+                            newPathString = newPathString.replace( components[ 1 ], components[ 2 ] );
+                        }
+
                     }
+
                 }
 
                 newPathString = newPathString.replace( "\\", "/" );
@@ -73,29 +88,9 @@ public abstract class PathMapper
                 System.out.println( e.toString() );
             }
         }
-        else
-        {
-            newPathString = pathString;
-        }
 
-        return newPathString; //Paths.get( newPathString );
+        return newPathString;
 
-    }
-
-    public static String getOsName()
-    {
-        return System.getProperty("os.name");
-    }
-
-    public static boolean isWindows()
-    {
-        return getOsName().toLowerCase().contains( "win" );
-    }
-
-    public static boolean isMac()
-    {
-        String OS = getOsName();
-        return ( OS.toLowerCase().contains( "mac" ) ) || ( OS.toLowerCase().contains( "darwin" ) );
     }
 
 }
