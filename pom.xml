@@ -69,7 +69,10 @@
 	</issueManagement>
 
 	<scm>
+		<connection>scm:git:git://github.com/ssgpers/java-utils-embl</connection>
+		<developerConnection>scm:git:git@github.com:ssgpers/java-utils-embl</developerConnection>
 		<tag>HEAD</tag>
+		<url>https://github.com/ssgpers/java-utils-embl</url>
 	</scm>
 	<ciManagement>
 		<system>None</system>
