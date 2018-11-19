@@ -27,7 +27,7 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
-	<url>http://embl.de/</url>
+	<url>https://www.embl.de/</url>
 	<developers>
 		<developer>
 			<id>halavaty</id>
@@ -95,7 +95,7 @@
 
 		<repository>
 			<id>imagej.public</id>
-			<url>http://maven.imagej.net/content/groups/public</url>
+			<url>https://maven.imagej.net/content/groups/public</url>
 		</repository>
 
 	</repositories>
