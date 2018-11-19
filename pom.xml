@@ -75,7 +75,8 @@
 		<url>https://github.com/ssgpers/java-utils-embl</url>
 	</scm>
 	<ciManagement>
-		<system>None</system>
+		<system>Travis CI</system>
+		<url>https://travis-ci.com/ssgpers/java-utils-embl</url>
 	</ciManagement>
 
 	<properties>
