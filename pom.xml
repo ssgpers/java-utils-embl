@@ -32,7 +32,6 @@
 		<developer>
 			<id>halavaty</id>
 			<name>Aliaksandr Halavatyi</name>
-			<url>None</url>
 			<roles>
 				<role>lead</role>
 				<role>developer</role>
@@ -46,7 +45,6 @@
 	<contributors>
 		<contributor>
 			<name>Christian Tischer</name>
-			<url>None</url>
 			<roles>
 				<role>founder</role>
 				<role>developer</role>
