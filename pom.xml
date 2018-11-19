@@ -13,7 +13,7 @@
 	</parent>
 
 	<groupId>de.embl.cba</groupId>
-	<version>0.0.4</version>
+	<version>0.0.5-SNAPSHOT</version>
 
 	<name>java-utils-embl</name>
 	<inceptionYear>2018</inceptionYear>
