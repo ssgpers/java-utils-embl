@@ -84,8 +84,6 @@
 		<license.licenseName>bsd_2</license.licenseName>
 		<license.copyrightOwners>EMBL</license.copyrightOwners>
 		<license.projectName>Tool functions for the developing Fiji-dependent and other Java projects.</license.projectName>
-
-		<enforcer.skip>true</enforcer.skip>
 	</properties>
 
 
