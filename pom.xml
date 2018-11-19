@@ -79,7 +79,6 @@
 
 	<properties>
 		<package-name>de.embl.cba.utils</package-name>
-		<main-class>com.mycompany.imagej.Process_Pixels</main-class>
 		<license.licenseName>bsd_2</license.licenseName>
 		<license.copyrightOwners>EMBL</license.copyrightOwners>
 		<license.projectName>Tool functions for the developing Fiji-dependent and other Java projects.</license.projectName>
