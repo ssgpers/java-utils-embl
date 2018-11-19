@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-		http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -13,9 +10,12 @@
 	</parent>
 
 	<groupId>de.embl.cba</groupId>
+	<artifactId>java-utils-embl</artifactId>
 	<version>0.0.5-SNAPSHOT</version>
 
 	<name>java-utils-embl</name>
+	<description>Tool functions of broader use.</description>
+	<url>https://www.embl.de/</url>
 	<inceptionYear>2018</inceptionYear>
 	<organization>
 		<name>EMBL</name>
@@ -27,7 +27,7 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
-	<url>https://www.embl.de/</url>
+
 	<developers>
 		<developer>
 			<id>halavaty</id>
@@ -63,17 +63,16 @@
 		</mailingList>
 	</mailingLists>
 
-	<issueManagement>
-		<system>GitHub Issues</system>
-		<url>https://github.com/ssgpers/java-utils-embl/issues</url>
-	</issueManagement>
-
 	<scm>
 		<connection>scm:git:git://github.com/ssgpers/java-utils-embl</connection>
 		<developerConnection>scm:git:git@github.com:ssgpers/java-utils-embl</developerConnection>
 		<tag>HEAD</tag>
 		<url>https://github.com/ssgpers/java-utils-embl</url>
 	</scm>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/ssgpers/java-utils-embl/issues</url>
+	</issueManagement>
 	<ciManagement>
 		<system>Travis CI</system>
 		<url>https://travis-ci.com/ssgpers/java-utils-embl</url>
@@ -86,11 +85,6 @@
 		<license.projectName>Tool functions for the developing Fiji-dependent and other Java projects.</license.projectName>
 	</properties>
 
-
-	<artifactId>java-utils-embl</artifactId>
-	<description>Tool functions of broader use.</description>
-
-
 	<repositories>
 
 		<repository>
@@ -99,7 +93,6 @@
 		</repository>
 
 	</repositories>
-
 
 	<dependencies>
 
@@ -114,7 +107,4 @@
 		</dependency>
 
 	</dependencies>
-
-
-
 </project>
