@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-		http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -13,9 +10,12 @@
 	</parent>
 
 	<groupId>de.embl.cba</groupId>
-	<version>0.0.4</version>
+	<artifactId>java-utils-embl</artifactId>
+	<version>0.0.5-SNAPSHOT</version>
 
 	<name>java-utils-embl</name>
+	<description>Tool functions of broader use.</description>
+	<url>https://www.embl.de/</url>
 	<inceptionYear>2018</inceptionYear>
 	<organization>
 		<name>EMBL</name>
@@ -27,12 +27,11 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
-	<url>http://embl.de/</url>
+
 	<developers>
 		<developer>
 			<id>halavaty</id>
 			<name>Aliaksandr Halavatyi</name>
-			<url>None</url>
 			<roles>
 				<role>lead</role>
 				<role>developer</role>
@@ -46,7 +45,6 @@
 	<contributors>
 		<contributor>
 			<name>Christian Tischer</name>
-			<url>None</url>
 			<roles>
 				<role>founder</role>
 				<role>developer</role>
@@ -60,48 +58,44 @@
 
 	<mailingLists>
 		<mailingList>
-			<name>ImageJ Forum</name>
-			<archive>http://forum.imagej.net/</archive>
+			<name>Image.sc Forum</name>
+			<archive>https://forum.image.sc/</archive>
 		</mailingList>
 	</mailingLists>
 
+	<scm>
+		<connection>scm:git:git://github.com/ssgpers/java-utils-embl</connection>
+		<developerConnection>scm:git:git@github.com:ssgpers/java-utils-embl</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/ssgpers/java-utils-embl</url>
+	</scm>
 	<issueManagement>
 		<system>GitHub Issues</system>
 		<url>https://github.com/ssgpers/java-utils-embl/issues</url>
 	</issueManagement>
-
-	<scm>
-		<tag>HEAD</tag>
-	</scm>
 	<ciManagement>
-		<system>None</system>
+		<system>Travis CI</system>
+		<url>https://travis-ci.com/ssgpers/java-utils-embl</url>
 	</ciManagement>
 
 	<properties>
-		<package-name>embl.cba.utils</package-name>
-		<main-class>com.mycompany.imagej.Process_Pixels</main-class>
+		<package-name>de.embl.cba.utils</package-name>
 		<license.licenseName>bsd_2</license.licenseName>
 		<license.copyrightOwners>EMBL</license.copyrightOwners>
 		<license.projectName>Tool functions for the developing Fiji-dependent and other Java projects.</license.projectName>
 
-		<imagej.app.directory>/Applications/Fiji.app/</imagej.app.directory>
-		<enforcer.skip>true</enforcer.skip>
+		<!-- NB: Deploy releases to the ImageJ Maven repository. -->
+		<releaseProfiles>deploy-to-imagej</releaseProfiles>
 	</properties>
-
-
-	<artifactId>java-utils-embl</artifactId>
-	<description>Tool functions of broader use.</description>
-
 
 	<repositories>
 
 		<repository>
 			<id>imagej.public</id>
-			<url>http://maven.imagej.net/content/groups/public</url>
+			<url>https://maven.imagej.net/content/groups/public</url>
 		</repository>
 
 	</repositories>
-
 
 	<dependencies>
 
@@ -116,7 +110,4 @@
 		</dependency>
 
 	</dependencies>
-
-
-
 </project>
